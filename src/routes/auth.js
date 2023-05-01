@@ -5,7 +5,7 @@ const authController = require('../app/controllers/AuthController')
 const User = require('../app/models/User')
 
 router.get('/login', authController.getLogin)
-
+router.get('/', authController.get)
 router.post('/login',
     [
         body('email')

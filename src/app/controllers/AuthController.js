@@ -66,7 +66,9 @@ class AuthController {
             })
             .catch(next)
     }
-
+    get (req, res, next){
+        res.render('auth/login')
+    }
 }
 
 module.exports = new AuthController;
