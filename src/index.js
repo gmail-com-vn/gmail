@@ -8,7 +8,7 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 
 const flash = require('connect-flash')
 
-const SortMiddleware = require('./app/middlewares/sortMiddleware')
+// const SortMiddleware = require('./app/middlewares/sortMiddleware')
 
 const User = require('./app/models/User');
 const route = require('./routes') // tự nạp file index
@@ -66,7 +66,7 @@ app.use(express.json());
 app.use(methodOverride('_method'))
 
 //Custom middlewares
-app.use(SortMiddleware)
+// app.use(SortMiddleware)
 
 // HTTP logger
 app.use(morgan('combined'))
