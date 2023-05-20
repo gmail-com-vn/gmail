@@ -27,7 +27,7 @@ db.connect()
   .catch()
 
 const store = new MongoDBStore({
-  uri: 'mongodb://127.0.0.1:27017/gmail',
+  uri: 'mongodb+srv://vanduc10101010:20194184@gmail.tspti01.mongodb.net/?retryWrites=true&w=majority',
   collection: 'sessions'
 })
 
