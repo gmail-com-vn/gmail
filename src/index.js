@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-const morgan = require('morgan')
+// const morgan = require('morgan')
 var methodOverride = require('method-override')
 const handlebars = require('express-handlebars')
 const session = require('express-session')
@@ -27,7 +27,7 @@ db.connect()
   .catch()
 
 const store = new MongoDBStore({
-  uri: 'mongodb+srv://vanduc10101010:20194184@gmail.tspti01.mongodb.net/?retryWrites=true&w=majority',
+  uri: 'mongodb://mongo/gmail',
   collection: 'sessions'
 })
 
@@ -69,7 +69,7 @@ app.use(methodOverride('_method'))
 // app.use(SortMiddleware)
 
 // HTTP logger
-app.use(morgan('combined'))
+// app.use(morgan('combined'))
 
 // Template engine
 app.engine('hbs', handlebars.engine({
